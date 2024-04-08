@@ -76,7 +76,7 @@ export default function TableRow({ user, updateSelectedIds, selectedIds, deleteR
         <td className="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white overflow-x-clip">
           {
             editable ? 
-            <input placeholder={user.name} onChange={(e)=>handleNameChange(e.target.value)} className='w-max text-black px-1 rounded-sm overflow-clip' type="text" />
+            <input placeholder={user.name} onChange={(e)=>handleNameChange(e.target.value)} className='w-max px-1 rounded-sm overflow-clip' type="text" />
             :
             user.name
           }
@@ -85,7 +85,7 @@ export default function TableRow({ user, updateSelectedIds, selectedIds, deleteR
         <td className="py-4 px-6 text-sm font-medium text-gray-500 whitespace-nowrap dark:text-white overflow-x-clip">
           {
             editable ? 
-            <input placeholder={user.email} onChange={(e)=>handleEmailChange(e.target.value)} className='w-max text-black px-1 rounded-sm overflow-clip' type="text" />
+            <input placeholder={user.email} onChange={(e)=>handleEmailChange(e.target.value)} className='w-max px-1 rounded-sm overflow-clip' type="text" />
             :
             user.email
           }
@@ -94,7 +94,7 @@ export default function TableRow({ user, updateSelectedIds, selectedIds, deleteR
         <td className="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white overflow-x-clip">
           {
             editable ? 
-            <input placeholder={user.role} onChange={(e)=>handleRoleChange(e.target.value)} className='w-20 text-black px-1 rounded-sm overflow-clip' type="text" />
+            <input placeholder={user.role} onChange={(e)=>handleRoleChange(e.target.value)} className='w-20 px-1 rounded-sm overflow-clip' type="text" />
             :
             user.role
           }
