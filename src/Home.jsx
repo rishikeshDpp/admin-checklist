@@ -9,11 +9,13 @@ export default function Home() {
     const [displayList, setDisplayList] = useState(originalArr)
     
     const [searchQuery, setSearchQuery] = useState('')
+    const [currentPage, setCurrentPage] = useState(1);
 
     const selectedIds = useRef([])
 
     useEffect(() => {
         filterFunction(searchQuery)
+        setCurrentPage(1)
     },[searchQuery])
 
     function searchQueryHandler(text) {
@@ -113,6 +115,8 @@ export default function Home() {
             <DataTable 
                 originalList = {originalList}
                 displayList={displayList}
+                currentPage={currentPage}
+                setCurrentPage={setCurrentPage}
                 updateSelectedIds={updateSelectedIds}
                 updateMultipleSelectedIds={updateMultipleSelectedIds}
                 selectedIds={selectedIds}

@@ -6,15 +6,14 @@ let PageSize = 10;
 
 function DataTable(props) {
 
-    const [currentPage, setCurrentPage] = useState(1);
     const [isPageChecked, setIsPageChecked] = useState(false);
 
     /** Calculates Pagination */
     const currentTableData = useMemo(() => {
-      const firstPageIndex = (currentPage - 1) * PageSize;
+      const firstPageIndex = (props.currentPage - 1) * PageSize;
       const lastPageIndex = firstPageIndex + PageSize;
       return props.displayList.slice(firstPageIndex, lastPageIndex);
-    }, [currentPage, props.displayList, props.originalList]);
+    }, [props.currentPage, props.displayList, props.originalList]);
 
     function handleMultipleInputChecked() {
         props.updateMultipleSelectedIds(currentTableData, props.selectedIds, isPageChecked)
@@ -28,7 +27,7 @@ function DataTable(props) {
 
     useEffect(()=>{
         areAllRowsChecked()
-    },[currentPage])
+    },[props.currentPage])
 
     return (
     <div className='shadow-md rounded-lg overflow-clip'>
@@ -82,10 +81,10 @@ function DataTable(props) {
             </button>
             <Pagination
                 className="pagination-bar"
-                currentPage={currentPage}
+                currentPage={props.currentPage}
                 totalCount={props.displayList.length}
                 pageSize={PageSize}
-                onPageChange={(page) => setCurrentPage(page)}
+                onPageChange={(page) => props.setCurrentPage(page)}
             />
         </div>
     </div>

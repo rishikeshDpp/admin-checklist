@@ -15,16 +15,14 @@ export default function SearchBar({searchQueryHandler}) {
     }
   }
 
-
   return (
     <div className="relative flex items-center w-full h-12 mb-4 rounded-lg focus-within:shadow-lg bg-white overflow-hidden">
-
         <button className="grid place-items-center h-full w-12 text-gray-300 hover:text-blue-300 search-icon"
           onClick={OnSubmit} 
         >
           <SearchIcon styles={'h-6 w-6 p-auto'} />
         </button>
-
+        
         <input
         ref={inputText}
         className="peer h-full w-full bg-white outline-none text-sm text-gray-700 px-2"
@@ -32,7 +30,6 @@ export default function SearchBar({searchQueryHandler}) {
         id="search"
         placeholder="Search by name, email or role"
         onKeyDown={handleKeyDown} /> 
-
     </div>
   )
 }
