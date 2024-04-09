@@ -65,8 +65,8 @@ export default function TableRow({ user, updateSelectedIds, selectedIds, deleteR
 
   return (
     <tr className={isChecked ? 'bg-gray-900' : ''}>
-        <td className="p-4 w-4">
-          <div className="flex items-center">
+        <td className="sm:p-4 w-4">
+          <div className="flex justify-center items-center">
               <input id={user.id} type="checkbox" className="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
                 onChange={(e) => handleInputChecked(e.target.id)}
                 checked={isChecked}
@@ -75,7 +75,7 @@ export default function TableRow({ user, updateSelectedIds, selectedIds, deleteR
           </div>
         </td>
 
-        <td className="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white overflow-x-clip">
+        <td className="py-4 px-2 sm:px-6 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white overflow-x-clip">
           {
             editable ? 
             <input placeholder={user.name} onChange={(e)=>handleNameChange(e.target.value)} className='w-max px-1 rounded-sm overflow-clip' type="text" />
@@ -84,7 +84,7 @@ export default function TableRow({ user, updateSelectedIds, selectedIds, deleteR
           }
         </td>
 
-        <td className="py-4 px-6 text-sm font-medium text-gray-500 whitespace-nowrap dark:text-white overflow-x-clip">
+        <td className="py-4 px-2 sm:px-6 text-sm font-medium text-gray-500 whitespace-nowrap dark:text-white overflow-x-clip">
           {
             editable ? 
             <input placeholder={user.email} onChange={(e)=>handleEmailChange(e.target.value)} className='w-max px-1 rounded-sm overflow-clip' type="text" />
@@ -93,7 +93,7 @@ export default function TableRow({ user, updateSelectedIds, selectedIds, deleteR
           }
         </td>
 
-        <td className="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white overflow-x-clip">
+        <td className="py-4 px-2 sm:px-6 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white overflow-x-clip">
           {
             editable ? 
             <input placeholder={user.role} onChange={(e)=>handleRoleChange(e.target.value)} className='w-20 px-1 rounded-sm overflow-clip' type="text" />
@@ -102,14 +102,14 @@ export default function TableRow({ user, updateSelectedIds, selectedIds, deleteR
           }
         </td>
 
-        <td className="py-4 px-6 text-sm font-medium whitespace-nowrap flex justify-start items-center overflow-x-clip">
+        <td className="py-4 px-2 sm:px-6 text-sm font-medium whitespace-nowrap flex justify-start items-center overflow-x-clip">
           {
             editable ?
-            <button onClick={saveRow} className="text-blue-600 dark:text-blue-500 hover:underline mr-5 save">
+            <button onClick={saveRow} className="text-blue-600 dark:text-blue-500 hover:underline mr-1 sm:mr-5 save">
               <SaveIcon styles={'w-4 fill-white hover:fill-blue-400 transition-colors'} />
             </button>
             :
-            <button onClick={editRow} className="text-blue-600 dark:text-blue-500 hover:underline mr-4 edit">
+            <button onClick={editRow} className="text-blue-600 dark:text-blue-500 hover:underline mr-1 sm:mr-4 edit">
               <EditIcon styles={'w-5 fill-white hover:fill-blue-400 transition-colors'} />
             </button>
           }

@@ -108,8 +108,8 @@ export default function Home() {
     }
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between py-16 lg:px-24">
-      <div className="flex flex-col w-[80%]">
+    <main className="flex min-h-screen flex-col items-center justify-between pt-4 sm:pt-16 lg:px-24">
+      <div className="flex flex-col w-[100%] sm:w-[80%]">
         <SearchBar searchQueryHandler={searchQueryHandler}/>
         <Suspense fallback={<PlaceHolderTable />}>
             <DataTable 

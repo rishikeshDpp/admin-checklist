@@ -16,7 +16,7 @@ export default function SearchBar({searchQueryHandler}) {
   }
 
   return (
-    <div className="relative flex items-center w-full h-12 mb-4 rounded-lg focus-within:shadow-lg bg-white overflow-hidden">
+    <div className="relative flex items-center mx-[5%] w-[90%] sm:mx-0 sm:w-full h-12 mb-4 rounded-lg focus-within:shadow-lg bg-white overflow-hidden">
         <button className="grid place-items-center h-full w-12 text-gray-300 hover:text-blue-300 search-icon"
           onClick={OnSubmit} 
         >
