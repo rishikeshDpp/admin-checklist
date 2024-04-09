@@ -18,8 +18,6 @@ export default function TableRow({ user, updateSelectedIds, selectedIds, deleteR
   useEffect(()=>{
     if(selectedIds.current.includes(user.id)) setIsChecked(true)
     else setIsChecked(false)
-
-    setEditable(false)
   },[user.id])
 
   useEffect(()=>{
